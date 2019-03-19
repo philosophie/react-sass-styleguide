@@ -17,7 +17,17 @@ This is to help engineers and designers setup style related tools, and follow a 
 5. [React Bootstrap](https://react-bootstrap.github.io/)
 6. [BEM](http://getbem.com/naming/)
 
+## Usage
+
+To use this project as a starting point for your React web app, simply clone this repo and run:
+
+- `npm install`
+
+- `npm start`
+
 ## <a name="installation"></a>Installation
+
+To setup a new project yourself, follow these instructions:
 
 ### 1. Bootstrap your web project using [`create-react-app`](https://github.com/facebook/create-react-app).
 
