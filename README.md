@@ -1,3 +1,13 @@
+# Style Guidelines for SASS
+
+## What is this?
+
+This is an example project for you to reference when setting up a new web app using React and/or Sass. Alternatively, you can follow the [installation](#installation) steps below on your own project.
+
+## Why do I need this?
+
+This is to help engineers and designers setup style related tools, and follow a convention for the project. This makes the project more maintainable in the future.
+
 ## Tech & Ideologies Used
 
 1. [React](https://github.com/facebook/create-react-app)
@@ -7,7 +17,7 @@
 5. [React Bootstrap](https://react-bootstrap.github.io/)
 6. [BEM](http://getbem.com/naming/)
 
-## Installation
+## <a name="installation"></a>Installation
 
 ### 1. Bootstrap your web project using [`create-react-app`](https://github.com/facebook/create-react-app).
 
