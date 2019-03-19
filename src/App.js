@@ -5,8 +5,8 @@ class App extends Component {
   render() {
     return (
       <>
-        <Button />
-        <AccentButton />
+        <Button title={'Button'} />
+        <AccentButton title={'Accent Button'} />
       </>
     )
   }

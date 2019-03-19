@@ -169,8 +169,8 @@ Now we're going to add component level styled to our new `Button` component.
     render() {
       return (
         <>
-          <Button />
-          <AccentButton />
+          <Button title={'Button'} />
+          <AccentButton title={'Accent Button'} />
         </>
       )
     }
