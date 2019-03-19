@@ -6,7 +6,7 @@ This is an example project for you to reference when setting up a new web app us
 
 ## Why do I need this?
 
-This is to help engineers and designers setup style related tools, and follow a convention for the project. This makes the project more maintainable in the future.
+This is to help engineers and designers setup style related tools, and follow a frontend convention for the project. This makes the project more maintainable in the future.
 
 ## Tech & Ideologies Used
 
@@ -70,7 +70,7 @@ ITCSS suggests a sane way to separate global styles based on specificity, reach,
 - Create a `_variables.scss` partial that lives inside the `src/settings` folder.
 - Create a `_mixins.scss` partial that lives inside the `src/settings` folder. ITCSS puts this in it's own `tools` folder, however we're going to combine that with settings so we can import just 1 file when we're working at the component level.
 
-  - Note: if you want to bring in your own font declarations, we recommend creating a `_fonts.scss` file in this folder, and declaring your font there.
+  - Note: if you want to bring in your own font declarations, we recommend creating a `_fonts.scss` file in this folder, and declaring your font-family there. We recommend creating a ['font-face'](https://transfonter.org/) and serving it from the project rather than Google fonts when possible.
 
 - Create a `settings.scss` inside the `src/settings` folder that imports the two files we just created above:
   ```scss
@@ -79,7 +79,7 @@ ITCSS suggests a sane way to separate global styles based on specificity, reach,
   ```
 - Update our `styles/index.scss` file to import the file we just created:
   ```scss
-  @import './variables';
+  @import 'settings/settings';
   ```
 
 #### Generic
@@ -104,13 +104,13 @@ For this project, we're going to install [`modern-normalize`](https://github.com
 We've picked Bootstrap for this project, and since we're using React, we'll bring in [React Bootstrap](https://react-bootstrap.github.io/).
 
 - Run `npm install react-bootstrap bootstrap --save`
-- Add this to the end of `styles/index.scss`:
+- Add this to the end (after modern-normalize) of `styles/index.scss`:
   ```scss
     ..
     @import '~bootstrap/scss/bootstrap';
     ..
   ```
-- Note: If you need to customize the default Bootstrap theme, create a `_custom.scss` file inside the `styles/settings` folder, and import that **before** you import the Bootstrap styles.
+- Note: If you need to ['customize'](https://getbootstrap.com/docs/4.0/getting-started/theming/) the default Bootstrap theme, create a `_custom.scss` file inside the `styles/settings` folder.
 
 ### 8. Setup the Atomic structure
 

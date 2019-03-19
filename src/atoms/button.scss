@@ -1,15 +1,15 @@
 @import 'settings/settings';
 
 .brand-button {
-  padding: 1rem;
+  padding: 1rem 2rem;
 
   &--accent {
     background-color: $brand-accent;
     border-color: $brand-accent;
 
     @include hover() {
-      background-color: black;
-      border-color: black;
+      background-color: darken($brand-accent, 10%);
+      border-color: darken($brand-accent, 10%);
     }
   }
 }
