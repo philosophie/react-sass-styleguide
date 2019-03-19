@@ -1,0 +1,9 @@
+// GLOBAL STYLES ONLY
+
+// SETTINGS - contains fonts, colors definitions, mixins, etc
+@import 'settings/settings';
+
+// GENERIC - reset and/or normalize styles, box-sizing definition, etc.
+//           NOTE: Import your CSS Framework's styles AFTER reset/normalize
+@import '~modern-normalize/modern-normalize';
+@import '~bootstrap/scss/bootstrap';

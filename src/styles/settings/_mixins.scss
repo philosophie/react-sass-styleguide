@@ -1,0 +1,11 @@
+@mixin hover {
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
+}
+
+@mixin transition($time, $type: ease-in-out) {
+  transition: all $time $type;
+}
