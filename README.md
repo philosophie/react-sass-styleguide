@@ -118,7 +118,12 @@ Atomic Design's ideologies categorize styles via `atoms`, `molecules`, `organism
 
 - Create each category folder in the `src` directory (`atoms`, `molecules`, `organisms`, `templates`, and `pages`).
 
-### 9. Create your first `atom`
+- Note: Depending on your needs 'templates' and 'pages' can be redundant. If this is the case, remove or do not add templates to your project.
+
+## How to use the Atomic structure
+Follow these instruction to create an atom, molecule, organism, template, or page:
+
+### 1. Create your first `atom`
 
 We're going to create a `Button` atom that uses Bootstrap's button, but has custom styles.
 
@@ -152,7 +157,7 @@ We're going to create a `Button` atom that uses Bootstrap's button, but has cust
 
 - Go to `http://localhost:3000/` and you should see your new button rendered on the page!
 
-### 10. Add styles to your `atom`
+### 2. Add styles to your `atom`
 
 Now we're going to add component level styled to our new `Button` component.
 
