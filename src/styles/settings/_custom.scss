@@ -17,3 +17,7 @@ $theme-colors: (
   "light":      $light,
   "dark":       $dark
 );
+
+// Change global font font-family
+$font-family-base: $brand-font;
+$headings-font-weight: bold;

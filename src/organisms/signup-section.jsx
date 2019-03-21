@@ -12,12 +12,12 @@ export function SignupSection(props) {
     <div className="signup-container">
       <Container>
         <Row>
-          <Col xs={12} md={6} lg={7}>
+          <Col xs={12} md={6} lg={6}>
             <h2>{props.headline}</h2>
             <p>{props.cta_copy}</p>
           </Col>
 
-          <Col xs={12} md={6} lg={5}>
+          <Col xs={12} md={6} lg={{ span: 5, offset: 1 }}>
             <EmailSignup placeholder={props.placeholder} title={props.title} />
           </Col>
         </Row>

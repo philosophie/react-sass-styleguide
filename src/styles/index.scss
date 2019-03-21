@@ -7,3 +7,6 @@
 // NOTE: Import your CSS Framework's styles AFTER reset/normalize
 @import '~modern-normalize/modern-normalize';
 @import '~bootstrap/scss/bootstrap';
+
+// ELEMENTS - styling for bare HTML elements (like H1, A, etc.)
+@import 'elements/elements';

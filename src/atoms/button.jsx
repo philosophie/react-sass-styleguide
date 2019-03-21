@@ -4,7 +4,7 @@ import './button.scss'
 
 export function Button(props) {
   return (
-    <BootstrapButton className="brand-button">{props.title}</BootstrapButton>
+    <BootstrapButton className={props.className ? props.className + " brand-button" : "brand-button"}>{props.title}</BootstrapButton>
   )
 }
 

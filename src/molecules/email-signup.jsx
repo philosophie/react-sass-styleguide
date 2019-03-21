@@ -6,8 +6,8 @@ import './email-signup.scss'
 export function EmailSignup(props) {
   return (
     <div className="email-signup">
-      <EmailInput placeholder={props.placeholder}/>
-      <Button title={props.title}/>
+      <EmailInput placeholder={props.placeholder} className="email-signup__input"/>
+      <Button title={props.title} className="email-signup__button"/>
     </div>
   )
 }

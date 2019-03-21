@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
-import { Styleguide } from './pages/styleguide'
+import { AtomicPage } from './pages/atomic-page'
 
 class App extends Component {
   render() {
     return (
-      <>
-        <Styleguide/>
-      </>
+      <AtomicPage/>
     )
   }
 }

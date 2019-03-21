@@ -6,22 +6,22 @@ import { SignupSection } from '../organisms/signup-section'
 import * as Container from 'react-bootstrap/Container'
 import * as Row from 'react-bootstrap/Row'
 import * as Col from 'react-bootstrap/Col'
-import './styleguide.scss'
+import './atomic-page.scss'
 
-export function Styleguide(props) {
+export function AtomicPage(props) {
   return (
-    <>
-      <div className="styleguide-sections">
+    <main className="atomic-page">
+      <div className="atomic-page__section">
         <Container>
           <h1>Page</h1>
-          <p>This "Page" illustrates how elements breakdown in the Atomic system.</p>
+          <p>This "Page" illustrates how elements breakdown in the Atomic system. Atoms make up molecules, molecules make up organisms, and organisms are used on pages and templates. <a href="http://bradfrost.com/blog/post/atomic-web-design/">Click here</a> to learn more about Atomic design.</p>
         </Container>
       </div>
 
       {/* Using atoms */}
-      <div className="styleguide-sections">
+      <div className="atomic-page__section atomic-page__section--atoms">
         <Container>
-          <h3>Atoms</h3>
+          <h1>Atoms</h1>
 
           <Row>
             <Col>
@@ -32,15 +32,16 @@ export function Styleguide(props) {
             <Col>
               <h5>Button</h5>
               <Button title={'Atom'} />
+              <AccentButton title={'Atom Accent'} />
             </Col>
           </Row>
         </Container>
       </div>
 
       {/* Using a molecule */}
-      <div className="styleguide-sections">
+      <div className="atomic-page__section">
         <Container>
-          <h3>Molecules</h3>
+          <h1>Molecules</h1>
 
           <Row>
             <Col>
@@ -52,9 +53,9 @@ export function Styleguide(props) {
       </div>
 
       {/* Using an organism */}
-      <div className="styleguide-sections">
+      <div className="atomic-page__section">
         <Container>
-          <h3>Organisms</h3>
+          <h1>Organisms</h1>
           <h5>Signup Section</h5>
         </Container>
 
@@ -65,6 +66,6 @@ export function Styleguide(props) {
           cta_copy="This thing is so great and you really need it. Provide your email and we will let you know as soon at it's available."
         />
       </div>
-    </>
+    </main>
   )
 }
