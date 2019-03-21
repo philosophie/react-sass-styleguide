@@ -1,0 +1,19 @@
+@import 'settings/settings';
+
+.email-signup {
+  display: flex;
+  max-width: 500px;
+
+  .email-input {
+    height: calc(1.8em + 1rem + 2px);
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .brand-button {
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}

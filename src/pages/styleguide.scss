@@ -1,0 +1,12 @@
+@import 'settings/settings';
+
+.styleguide-sections {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.column-example {
+  background: rgba($brand-primary, 0.1);
+  border: 1px solid $brand-primary;
+  margin: 1rem 0;
+  padding: 1rem;
+}

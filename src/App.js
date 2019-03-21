@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import { Button, AccentButton } from './atoms/button'
+import { Styleguide } from './pages/styleguide'
 
 class App extends Component {
   render() {
     return (
       <>
-        <Button title={'Button'} />
-        <AccentButton title={'Accent Button'} />
+        <Styleguide/>
       </>
     )
   }

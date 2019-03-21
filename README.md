@@ -112,7 +112,11 @@ We've picked Bootstrap for this project, and since we're using React, we'll brin
   ```
 - Note: If you need to ['customize'](https://getbootstrap.com/docs/4.0/getting-started/theming/) the default Bootstrap theme, create a `_custom.scss` file inside the `styles/settings` folder.
 
-### 8. Setup the Atomic structure
+
+## Using Atomic structure
+Follow these instruction to setup and create an atom, molecule, organism, template, or page:
+
+### 1. Setup the Atomic structure
 
 Atomic Design's ideologies categorize styles via `atoms`, `molecules`, `organisms`, `templates`, and `pages`. **[For detailed info on what these categorizes really mean, please read this](http://bradfrost.com/blog/post/atomic-web-design/)**.
 
@@ -120,10 +124,7 @@ Atomic Design's ideologies categorize styles via `atoms`, `molecules`, `organism
 
 - Note: Depending on your needs 'templates' and 'pages' can be redundant. If this is the case, remove or do not add templates to your project.
 
-## How to use the Atomic structure
-Follow these instruction to create an atom, molecule, organism, template, or page:
-
-### 1. Create your first `atom`
+### 2. Create your first `atom`
 
 We're going to create a `Button` atom that uses Bootstrap's button, but has custom styles.
 
@@ -157,9 +158,9 @@ We're going to create a `Button` atom that uses Bootstrap's button, but has cust
 
 - Go to `http://localhost:3000/` and you should see your new button rendered on the page!
 
-### 2. Add styles to your `atom`
+### 3. Add styles to your `atom`
 
-Now we're going to add component level styled to our new `Button` component.
+Now we're going to add component level styles to our new `Button` component.
 
 - Create a new file inside `atoms` called `button.scss`
 - At the top of the `button.jsx` file, import the Sass file:
