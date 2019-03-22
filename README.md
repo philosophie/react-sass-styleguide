@@ -232,20 +232,17 @@ We're now going to create an `EmailSignup` molecule that is made up of `atoms`.
 
 - Create a new file called `email-signup.jsx` inside the `src/molecules` directory.
 
-  ```
+  ```jsx
   import React from 'react'
 
   export function EmailSignup(props) {
-    return (
-      <div className="email-signup">
-      </div>
-    )
+    return <div className="email-signup" />
   }
   ```
 
 - Next import the necessary `atoms` and add them to the markup.
 
-  ```
+  ```jsx
   import React from 'react'
   import { EmailInput } from '../atoms/email-input'
   import { Button } from '../atoms/button'
@@ -254,8 +251,11 @@ We're now going to create an `EmailSignup` molecule that is made up of `atoms`.
   export function EmailSignup(props) {
     return (
       <div className="email-signup">
-        <EmailInput placeholder={props.placeholder} className="email-signup__input"/>
-        <Button title={props.title} className="email-signup__button"/>
+        <EmailInput
+          placeholder={props.placeholder}
+          className="email-signup__input"
+        />
+        <Button title={props.title} className="email-signup__button" />
       </div>
     )
   }
@@ -269,20 +269,17 @@ You can now use `Button` and `EmailSignup` directly on any new `page` you create
 
 - Create a new file called `email-section.jsx` inside the `src/organism` directory.
 
-  ```
+  ```jsx
   import React from 'react'
 
   export function SignupSection(props) {
-    return (
-      <div className="signup-container">
-      </div>
-    )
+    return <div className="signup-container" />
   }
   ```
 
 - Similar to creating a `molecule` you will now import the necessary `molecules` or `atoms`.
 
-  ```
+  ```jsx
   import React from 'react'
   import { EmailSignup } from '../molecules/email-signup'
 
@@ -300,7 +297,7 @@ You can now use `Button` and `EmailSignup` directly on any new `page` you create
 
 - Next we will add structure to our `molecule` by importing `Container`, `Row`, and `Col` from `bootstrap`.
 
-  ```
+  ```jsx
   import React from 'react'
   import { EmailSignup } from '../molecules/email-signup'
   import * as Container from 'react-bootstrap/Container'
@@ -319,7 +316,10 @@ You can now use `Button` and `EmailSignup` directly on any new `page` you create
             </Col>
 
             <Col xs={12} md={6} lg={{ span: 5, offset: 1 }}>
-              <EmailSignup placeholder={props.placeholder} title={props.title} />
+              <EmailSignup
+                placeholder={props.placeholder}
+                title={props.title}
+              />
             </Col>
           </Row>
         </Container>
@@ -330,12 +330,12 @@ You can now use `Button` and `EmailSignup` directly on any new `page` you create
 
 - Now create and import `signup-section.scss` just like we did with the above `molecule`.
 
-  ````
+  ```scss
   @import 'settings/settings';
 
   .signup-container {
     background: $dark-gray;
     color: #fff;
     padding: 7% 0;
-  }```
-  ````
+  }
+  ```
