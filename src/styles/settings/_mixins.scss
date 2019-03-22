@@ -1,3 +1,4 @@
+// Add all element states
 @mixin hover {
   &:hover,
   &:focus,
@@ -6,6 +7,32 @@
   }
 }
 
+// Simple Transition
 @mixin transition($time, $type: ease-in-out) {
   transition: all $time $type;
+}
+
+// Media queries using defined variables
+@mixin sm {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$widescreen}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$fullhd}) {
+    @content;
+  }
 }

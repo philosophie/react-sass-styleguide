@@ -1,0 +1,25 @@
+// Use this file to override Bootstrap theme variables.
+
+// Import bootstrap
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
+// Copy and paste the variables as needed from: node_modules/bootstrap/scss/_variables.scss
+// Exmple: theme-colors
+$theme-colors: (
+  'primary': $brand-primary,
+  //override from our variables file
+    'secondary': $brand-secondary,
+  //override from our variables file
+    'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'danger': $danger,
+  'light': $light,
+  'dark': $dark,
+);
+
+// Change global font font-family
+$font-family-base: $brand-font;
+$headings-font-weight: bold;

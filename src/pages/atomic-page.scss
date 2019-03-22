@@ -1,0 +1,23 @@
+@import 'settings/settings';
+
+.atomic-page__section {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.atomic-page__paragraph--max-width {
+  max-width: 690px;
+}
+
+.atomic-page__section--atoms .brand-button {
+  margin-right: 1rem;
+}
+
+.atomic-page__section--atoms .email-input {
+  margin-bottom: 1rem;
+
+  // Mixin Media query
+  @include md {
+    margin-bottom: 0;
+  }
+}

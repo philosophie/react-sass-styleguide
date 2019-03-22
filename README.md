@@ -6,7 +6,7 @@ This is an example project for you to reference when setting up a new web app us
 
 ## Why do I need this?
 
-This is to help engineers and designers setup style related tools, and follow a convention for the project. This makes the project more maintainable in the future.
+This is to help engineers and designers setup style related tools, and follow a frontend convention for the project. This makes the project more maintainable in the future.
 
 ## Tech & Ideologies Used
 
@@ -70,7 +70,7 @@ ITCSS suggests a sane way to separate global styles based on specificity, reach,
 - Create a `_variables.scss` partial that lives inside the `src/settings` folder.
 - Create a `_mixins.scss` partial that lives inside the `src/settings` folder. ITCSS puts this in it's own `tools` folder, however we're going to combine that with settings so we can import just 1 file when we're working at the component level.
 
-  - Note: if you want to bring in your own font declarations, we recommend creating a `_fonts.scss` file in this folder, and declaring your font there.
+  - Note: if you want to bring in your own font declarations, we recommend creating a `_fonts.scss` file in this folder, and declaring your font-family there. We also suggest creating a ['font-face'](https://transfonter.org/) and serving it from the project rather than Google fonts when possible.
 
 - Create a `settings.scss` inside the `src/settings` folder that imports the two files we just created above:
   ```scss
@@ -79,7 +79,7 @@ ITCSS suggests a sane way to separate global styles based on specificity, reach,
   ```
 - Update our `styles/index.scss` file to import the file we just created:
   ```scss
-  @import './variables';
+  @import 'settings/settings';
   ```
 
 #### Generic
@@ -104,21 +104,27 @@ For this project, we're going to install [`modern-normalize`](https://github.com
 We've picked Bootstrap for this project, and since we're using React, we'll bring in [React Bootstrap](https://react-bootstrap.github.io/).
 
 - Run `npm install react-bootstrap bootstrap --save`
-- Add this to the end of `styles/index.scss`:
+- Add this to the end (after modern-normalize) of `styles/index.scss`:
   ```scss
     ..
     @import '~bootstrap/scss/bootstrap';
     ..
   ```
-- Note: If you need to customize the default Bootstrap theme, create a `_custom.scss` file inside the `styles/settings` folder, and import that **before** you import the Bootstrap styles.
+- Note: If you need to ['customize'](https://getbootstrap.com/docs/4.0/getting-started/theming/) the default Bootstrap theme, create a `_custom.scss` file inside the `styles/settings` folder.
 
-### 8. Setup the Atomic structure
+## Using Atomic structure
+
+Follow these instruction to setup and create an atom, molecule, organism, template, or page. You can see a working example of each on `src/pages/atomic-page`.
+
+### 1. Setup the Atomic structure
 
 Atomic Design's ideologies categorize styles via `atoms`, `molecules`, `organisms`, `templates`, and `pages`. **[For detailed info on what these categorizes really mean, please read this](http://bradfrost.com/blog/post/atomic-web-design/)**.
 
 - Create each category folder in the `src` directory (`atoms`, `molecules`, `organisms`, `templates`, and `pages`).
 
-### 9. Create your first `atom`
+- Note: Depending on your needs 'templates' and 'pages' can be redundant. If this is the case, remove or do not add templates to your project.
+
+### 2. Create your first `atom`
 
 We're going to create a `Button` atom that uses Bootstrap's button, but has custom styles.
 
@@ -152,9 +158,9 @@ We're going to create a `Button` atom that uses Bootstrap's button, but has cust
 
 - Go to `http://localhost:3000/` and you should see your new button rendered on the page!
 
-### 10. Add styles to your `atom`
+### 3. Add styles to your `atom`
 
-Now we're going to add component level styled to our new `Button` component.
+Now we're going to add component level styles to our new `Button` component.
 
 - Create a new file inside `atoms` called `button.scss`
 - At the top of the `button.jsx` file, import the Sass file:
@@ -219,3 +225,117 @@ Now we're going to add component level styled to our new `Button` component.
   ```
 
   Note: we recommend keeping nesting to a max of 2 levels if possible. We also recommend using BEM classnames for **all** selectors where possible. Eg: prefer `.title--2 {}` instead of `h2 {}`. This keeps styles more maintainable and less specific.
+
+### 4. Creating your first `molecule`
+
+We're now going to create an `EmailSignup` molecule that is made up of `atoms`.
+
+- Create a new file called `email-signup.jsx` inside the `src/molecules` directory.
+
+  ```jsx
+  import React from 'react'
+
+  export function EmailSignup(props) {
+    return <div className="email-signup" />
+  }
+  ```
+
+- Next import the necessary `atoms` and add them to the markup.
+
+  ```jsx
+  import React from 'react'
+  import { EmailInput } from '../atoms/email-input'
+  import { Button } from '../atoms/button'
+  import './email-signup.scss'
+
+  export function EmailSignup(props) {
+    return (
+      <div className="email-signup">
+        <EmailInput
+          placeholder={props.placeholder}
+          className="email-signup__input"
+        />
+        <Button title={props.title} className="email-signup__button" />
+      </div>
+    )
+  }
+  ```
+
+  Note: If the `molecule` needs component specific styling create `email-signup.scss` in `src/molecules` and import it into `email-signup.jsx`.
+
+### 5. Creating an `organism`
+
+You can now use `Button` and `EmailSignup` directly on any new `page` you create, but we are going go one step further and create a `SignupSection`.
+
+- Create a new file called `email-section.jsx` inside the `src/organism` directory.
+
+  ```jsx
+  import React from 'react'
+
+  export function SignupSection(props) {
+    return <div className="signup-section" />
+  }
+  ```
+
+- Similar to creating a `molecule` you will now import the necessary `molecules` or `atoms`.
+
+  ```jsx
+  import React from 'react'
+  import { EmailSignup } from '../molecules/email-signup'
+
+  export function SignupSection(props) {
+    return (
+      <div className="signup-section">
+        <h2>{props.headline}</h2>
+        <p>{props.cta_copy}</p>
+
+        <EmailSignup placeholder={props.placeholder} title={props.title} />
+      </div>
+    )
+  }
+  ```
+
+- Next we will add structure to our `molecule` by importing `Container`, `Row`, and `Col` from `bootstrap`.
+
+  ```jsx
+  import React from 'react'
+  import { EmailSignup } from '../molecules/email-signup'
+  import * as Container from 'react-bootstrap/Container'
+  import * as Row from 'react-bootstrap/Row'
+  import * as Col from 'react-bootstrap/Col'
+  import './signup-section.scss'
+
+  export function SignupSection(props) {
+    return (
+      <div className="signup-section">
+        <Container>
+          <Row>
+            <Col xs={12} md={6} lg={6}>
+              <h2>{props.headline}</h2>
+              <p>{props.cta_copy}</p>
+            </Col>
+
+            <Col xs={12} md={6} lg={{ span: 5, offset: 1 }}>
+              <EmailSignup
+                placeholder={props.placeholder}
+                title={props.title}
+              />
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    )
+  }
+  ```
+
+- Now create and import `signup-section.scss` just like we did with the above `molecule`.
+
+  ```scss
+  @import 'settings/settings';
+
+  .signup-section {
+    background: $dark-gray;
+    color: #fff;
+    padding: 7% 0;
+  }
+  ```

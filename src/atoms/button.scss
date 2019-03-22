@@ -1,15 +1,13 @@
 @import 'settings/settings';
 
 .brand-button {
-  padding: 1rem;
+  padding: 0.6rem 2rem;
+  font-size: 1.2rem;
 
   &--accent {
-    background-color: $brand-accent;
-    border-color: $brand-accent;
-
-    @include hover() {
-      background-color: black;
-      border-color: black;
-    }
+    background-color: transparent;
+    color: $brand-secondary;
+    border-color: $brand-secondary;
+    border-width: 2px;
   }
 }

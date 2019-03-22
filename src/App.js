@@ -1,14 +1,9 @@
 import React, { Component } from 'react'
-import { Button, AccentButton } from './atoms/button'
+import { AtomicPage } from './pages/atomic-page'
 
 class App extends Component {
   render() {
-    return (
-      <>
-        <Button title={'Button'} />
-        <AccentButton title={'Accent Button'} />
-      </>
-    )
+    return <AtomicPage />
   }
 }
 
