@@ -14,7 +14,15 @@ export function AtomicPage(props) {
       <div className="atomic-page__section">
         <Container>
           <h2>Page</h2>
-          <p className="atomic-page__paragraph--max-width">This "Page" illustrates how elements breakdown in the Atomic system. Atoms make up molecules, molecules make up organisms, and organisms are used on pages and templates. <a href="http://bradfrost.com/blog/post/atomic-web-design/">Click here</a> to learn more about Atomic design.</p>
+          <p className="atomic-page__paragraph--max-width">
+            This "Page" illustrates how elements breakdown in the Atomic system.
+            Atoms make up molecules, molecules make up organisms, and organisms
+            are used on pages and templates.{' '}
+            <a href="http://bradfrost.com/blog/post/atomic-web-design/">
+              Click here
+            </a>{' '}
+            to learn more about Atomic design.
+          </p>
         </Container>
       </div>
 
@@ -26,7 +34,7 @@ export function AtomicPage(props) {
           <Row>
             <Col>
               <h5>Input Field</h5>
-              <EmailInput placeholder={'atom@gmail.com'}/>
+              <EmailInput placeholder={'atom@gmail.com'} />
             </Col>
 
             <Col xs={12} md={6}>
@@ -46,7 +54,10 @@ export function AtomicPage(props) {
           <Row>
             <Col>
               <h5>Email signup</h5>
-              <EmailSignup placeholder={'molecule@gmail.com'} title={'Molecule'} />
+              <EmailSignup
+                placeholder={'molecule@gmail.com'}
+                title={'Molecule'}
+              />
             </Col>
           </Row>
         </Container>
