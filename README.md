@@ -273,7 +273,7 @@ You can now use `Button` and `EmailSignup` directly on any new `page` you create
   import React from 'react'
 
   export function SignupSection(props) {
-    return <div className="signup-container" />
+    return <div className="signup-section" />
   }
   ```
 
@@ -285,7 +285,7 @@ You can now use `Button` and `EmailSignup` directly on any new `page` you create
 
   export function SignupSection(props) {
     return (
-      <div className="signup-container">
+      <div className="signup-section">
         <h2>{props.headline}</h2>
         <p>{props.cta_copy}</p>
 
@@ -307,7 +307,7 @@ You can now use `Button` and `EmailSignup` directly on any new `page` you create
 
   export function SignupSection(props) {
     return (
-      <div className="signup-container">
+      <div className="signup-section">
         <Container>
           <Row>
             <Col xs={12} md={6} lg={6}>
@@ -333,7 +333,7 @@ You can now use `Button` and `EmailSignup` directly on any new `page` you create
   ```scss
   @import 'settings/settings';
 
-  .signup-container {
+  .signup-section {
     background: $dark-gray;
     color: #fff;
     padding: 7% 0;
