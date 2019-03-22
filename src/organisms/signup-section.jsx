@@ -7,8 +7,8 @@ import './signup-section.scss'
 
 export function SignupSection(props) {
   return (
-    <div className="signup-container">
-      <Container>
+    <Container>
+      <div className="signup-section">
         <Row>
           <Col xs={12} md={6} lg={6}>
             <h2>{props.headline}</h2>
@@ -19,7 +19,7 @@ export function SignupSection(props) {
             <EmailSignup placeholder={props.placeholder} title={props.title} />
           </Col>
         </Row>
-      </Container>
-    </div>
+      </div>
+    </Container>
   )
 }
