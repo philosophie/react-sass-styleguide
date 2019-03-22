@@ -3,9 +3,7 @@ import { AtomicPage } from './pages/atomic-page'
 
 class App extends Component {
   render() {
-    return (
-      <AtomicPage/>
-    )
+    return <AtomicPage />
   }
 }
 

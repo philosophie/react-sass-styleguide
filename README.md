@@ -112,8 +112,8 @@ We've picked Bootstrap for this project, and since we're using React, we'll brin
   ```
 - Note: If you need to ['customize'](https://getbootstrap.com/docs/4.0/getting-started/theming/) the default Bootstrap theme, create a `_custom.scss` file inside the `styles/settings` folder.
 
-
 ## Using Atomic structure
+
 Follow these instruction to setup and create an atom, molecule, organism, template, or page. You can see a working example of each on `src/pages/atomic-page`.
 
 ### 1. Setup the Atomic structure
@@ -227,21 +227,22 @@ Now we're going to add component level styles to our new `Button` component.
   Note: we recommend keeping nesting to a max of 2 levels if possible. We also recommend using BEM classnames for **all** selectors where possible. Eg: prefer `.title--2 {}` instead of `h2 {}`. This keeps styles more maintainable and less specific.
 
 ### 4. Creating your first `molecule`
+
 We're now going to create an `EmailSignup` molecule that is made up of `atoms`.
 
 - Create a new file called `email-signup.jsx` inside the `src/molecules` directory.
-  ```
+
+  ```jsx
   import React from 'react'
 
   export function EmailSignup(props) {
-    return (
-      <div className="email-signup">
-      </div>
-    )
+    return <div className="email-signup" />
   }
   ```
+
 - Next import the necessary `atoms` and add them to the markup.
-  ```
+
+  ```jsx
   import React from 'react'
   import { EmailInput } from '../atoms/email-input'
   import { Button } from '../atoms/button'
@@ -250,8 +251,11 @@ We're now going to create an `EmailSignup` molecule that is made up of `atoms`.
   export function EmailSignup(props) {
     return (
       <div className="email-signup">
-        <EmailInput placeholder={props.placeholder} className="email-signup__input"/>
-        <Button title={props.title} className="email-signup__button"/>
+        <EmailInput
+          placeholder={props.placeholder}
+          className="email-signup__input"
+        />
+        <Button title={props.title} className="email-signup__button" />
       </div>
     )
   }
@@ -260,22 +264,22 @@ We're now going to create an `EmailSignup` molecule that is made up of `atoms`.
   Note: If the `molecule` needs component specific styling create `email-signup.scss` in `src/molecules` and import it into `email-signup.jsx`.
 
 ### 5. Creating an `organism`
+
 You can now use `Button` and `EmailSignup` directly on any new `page` you create, but we are going go one step further and create a `SignupSection`.
 
 - Create a new file called `email-section.jsx` inside the `src/organism` directory.
-  ```
+
+  ```jsx
   import React from 'react'
 
   export function SignupSection(props) {
-    return (
-      <div className="signup-container">
-      </div>
-    )
+    return <div className="signup-container" />
   }
   ```
 
 - Similar to creating a `molecule` you will now import the necessary `molecules` or `atoms`.
-  ```
+
+  ```jsx
   import React from 'react'
   import { EmailSignup } from '../molecules/email-signup'
 
@@ -292,7 +296,8 @@ You can now use `Button` and `EmailSignup` directly on any new `page` you create
   ```
 
 - Next we will add structure to our `molecule` by importing `Container`, `Row`, and `Col` from `bootstrap`.
-  ```
+
+  ```jsx
   import React from 'react'
   import { EmailSignup } from '../molecules/email-signup'
   import * as Container from 'react-bootstrap/Container'
@@ -311,7 +316,10 @@ You can now use `Button` and `EmailSignup` directly on any new `page` you create
             </Col>
 
             <Col xs={12} md={6} lg={{ span: 5, offset: 1 }}>
-              <EmailSignup placeholder={props.placeholder} title={props.title} />
+              <EmailSignup
+                placeholder={props.placeholder}
+                title={props.title}
+              />
             </Col>
           </Row>
         </Container>
@@ -321,11 +329,13 @@ You can now use `Button` and `EmailSignup` directly on any new `page` you create
   ```
 
 - Now create and import `signup-section.scss` just like we did with the above `molecule`.
-  ```
+
+  ```scss
   @import 'settings/settings';
 
   .signup-container {
     background: $dark-gray;
     color: #fff;
     padding: 7% 0;
-  }```
+  }
+  ```
