@@ -13,15 +13,15 @@ export function AtomicPage(props) {
     <main className="atomic-page">
       <div className="atomic-page__section">
         <Container>
-          <h1>Page</h1>
-          <p>This "Page" illustrates how elements breakdown in the Atomic system. Atoms make up molecules, molecules make up organisms, and organisms are used on pages and templates. <a href="http://bradfrost.com/blog/post/atomic-web-design/">Click here</a> to learn more about Atomic design.</p>
+          <h2>Page</h2>
+          <p className="atomic-page__paragraph--max-width">This "Page" illustrates how elements breakdown in the Atomic system. Atoms make up molecules, molecules make up organisms, and organisms are used on pages and templates. <a href="http://bradfrost.com/blog/post/atomic-web-design/">Click here</a> to learn more about Atomic design.</p>
         </Container>
       </div>
 
       {/* Using atoms */}
       <div className="atomic-page__section atomic-page__section--atoms">
         <Container>
-          <h1>Atoms</h1>
+          <h2>Atoms</h2>
 
           <Row>
             <Col>
@@ -29,7 +29,7 @@ export function AtomicPage(props) {
               <EmailInput placeholder={'atom@gmail.com'}/>
             </Col>
 
-            <Col>
+            <Col xs={12} md={6}>
               <h5>Button</h5>
               <Button title={'Atom'} />
               <AccentButton title={'Atom Accent'} />
@@ -41,11 +41,11 @@ export function AtomicPage(props) {
       {/* Using a molecule */}
       <div className="atomic-page__section">
         <Container>
-          <h1>Molecules</h1>
+          <h2>Molecules</h2>
 
           <Row>
             <Col>
-              <h5>Email sign up</h5>
+              <h5>Email signup</h5>
               <EmailSignup placeholder={'molecule@gmail.com'} title={'Molecule'} />
             </Col>
           </Row>
@@ -55,7 +55,7 @@ export function AtomicPage(props) {
       {/* Using an organism */}
       <div className="atomic-page__section">
         <Container>
-          <h1>Organisms</h1>
+          <h2>Organisms</h2>
           <h5>Signup Section</h5>
         </Container>
 

@@ -1,6 +1,4 @@
 import React from 'react'
-import { EmailInput } from '../atoms/email-input'
-import { Button } from '../atoms/button'
 import { EmailSignup } from '../molecules/email-signup'
 import * as Container from 'react-bootstrap/Container'
 import * as Row from 'react-bootstrap/Row'

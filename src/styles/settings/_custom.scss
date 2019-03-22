@@ -9,7 +9,7 @@
 // Exmple: theme-colors
 $theme-colors: (
   "primary":    $brand-primary, //override from our variables file
-  "secondary":  $secondary,
+  "secondary":  $brand-secondary, //override from our variables file
   "success":    $success,
   "info":       $info,
   "warning":    $warning,

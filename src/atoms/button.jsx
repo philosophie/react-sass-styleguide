@@ -10,7 +10,7 @@ export function Button(props) {
 
 export function AccentButton(props) {
   return (
-    <BootstrapButton className="brand-button brand-button--accent">
+    <BootstrapButton className="brand-button brand-button--accent" variant="secondary">
       {props.title}
     </BootstrapButton>
   )
