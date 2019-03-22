@@ -70,7 +70,7 @@ ITCSS suggests a sane way to separate global styles based on specificity, reach,
 - Create a `_variables.scss` partial that lives inside the `src/settings` folder.
 - Create a `_mixins.scss` partial that lives inside the `src/settings` folder. ITCSS puts this in it's own `tools` folder, however we're going to combine that with settings so we can import just 1 file when we're working at the component level.
 
-  - Note: if you want to bring in your own font declarations, we recommend creating a `_fonts.scss` file in this folder, and declaring your font-family there. We recommend creating a ['font-face'](https://transfonter.org/) and serving it from the project rather than Google fonts when possible.
+  - Note: if you want to bring in your own font declarations, we recommend creating a `_fonts.scss` file in this folder, and declaring your font-family there. We also suggest creating a ['font-face'](https://transfonter.org/) and serving it from the project rather than Google fonts when possible.
 
 - Create a `settings.scss` inside the `src/settings` folder that imports the two files we just created above:
   ```scss
