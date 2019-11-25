@@ -1,8 +1,8 @@
 import React from 'react'
 import { EmailSignup } from '../molecules/email-signup'
-import * as Container from 'react-bootstrap/Container'
-import * as Row from 'react-bootstrap/Row'
-import * as Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import './signup-section.scss'
 
 export function SignupSection(props) {

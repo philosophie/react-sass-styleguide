@@ -1,5 +1,5 @@
 import React from 'react'
-import * as BootstrapButton from 'react-bootstrap/Button'
+import BootstrapButton from 'react-bootstrap/Button'
 import './button.scss'
 
 export function Button(props) {

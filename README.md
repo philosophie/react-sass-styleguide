@@ -132,7 +132,7 @@ We're going to create a `Button` atom that uses Bootstrap's button, but has cust
 
   ```jsx
   import React from 'react'
-  import * as BootstrapButton from 'react-bootstrap/Button'
+  import BootstrapButton from 'react-bootstrap/Button'
 
   export function Button(props) {
     return (
@@ -300,9 +300,9 @@ You can now use `Button` and `EmailSignup` directly on any new `page` you create
   ```jsx
   import React from 'react'
   import { EmailSignup } from '../molecules/email-signup'
-  import * as Container from 'react-bootstrap/Container'
-  import * as Row from 'react-bootstrap/Row'
-  import * as Col from 'react-bootstrap/Col'
+  import Container from 'react-bootstrap/Container'
+  import Row from 'react-bootstrap/Row'
+  import Col from 'react-bootstrap/Col'
   import './signup-section.scss'
 
   export function SignupSection(props) {

@@ -3,9 +3,9 @@ import { Button, AccentButton } from '../atoms/button'
 import { EmailInput } from '../atoms/email-input'
 import { EmailSignup } from '../molecules/email-signup'
 import { SignupSection } from '../organisms/signup-section'
-import * as Container from 'react-bootstrap/Container'
-import * as Row from 'react-bootstrap/Row'
-import * as Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import './atomic-page.scss'
 
 export function AtomicPage(props) {
